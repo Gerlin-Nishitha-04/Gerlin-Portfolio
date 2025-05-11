@@ -127,9 +127,7 @@
             color: #fff;
         }
         #skills {
-            background: #16213e
-
-;
+            background: #16213e;
             border-radius: 10px;
             text-align: center;
         }
@@ -625,6 +623,26 @@
             });
         } catch (error) {
             console.error('Error in hamburger menu:', error);
+        }
+
+        // Form submission notification
+        try {
+            const form = document.getElementById('contact-form');
+            const notification = document.getElementById('notification');
+            
+            form.addEventListener('submit', function(e) {
+                // Show notification
+                notification.textContent = 'Message Sent Successfully!';
+                notification.style.display = 'block';
+                
+                // Reset form after submission
+                setTimeout(() => {
+                    form.reset();
+                    notification.style.display = 'none';
+                }, 2500); // Matches the animation duration (2s fadeOut + 0.5s buffer)
+            });
+        } catch (error) {
+            console.error('Error in form submission notification:', error);
         }
     </script>
 </body>    
