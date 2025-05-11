@@ -358,14 +358,14 @@
             top: 20px;
             left: 50%;
             transform: translateX(-50%);
-            background-color: #2dd4bf;
+            background-color: #4db6ac;
             color: #fff;
             padding: 10px 20px;
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.3);
             z-index: 1000;
             display: none;
-            animation: fadeIn 0.3s ease-in, fadeOut 0.3s ease-out 2s forwards;
+            animation: fadeIn 0.3s ease-in, fadeOut 0.3s ease-out 5s forwards;
         }
         @media (max-width: 768px) {
             nav .nav-links {
@@ -653,12 +653,12 @@
                     if (response.ok) {
                         // Reset form
                         form.reset();
-                        // Hide notification after 2 seconds
+                        // Hide notification after 5 seconds
                         setTimeout(() => {
                             notification.style.display = 'none';
                             // Redirect to the _next URL
                             window.location.href = form.querySelector('input[name="_next"]').value;
-                        }, 2000);
+                        }, 5000);
                     } else {
                         throw new Error('Form submission failed');
                     }
@@ -668,7 +668,7 @@
                     notification.style.backgroundColor = '#ff6f61'; // Change color for error
                     setTimeout(() => {
                         notification.style.display = 'none';
-                    }, 2000);
+                    }, 5000);
                 }
             });
         } catch (error) {
